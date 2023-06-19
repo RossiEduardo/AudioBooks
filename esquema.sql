@@ -1,6 +1,8 @@
 CREATE TABLE Plataforma_distribuidora(
 	cnpj char(14),
 	nome varchar(30),
+	num_usuarios integer,
+	num_livros integer,
 	
 	constraint pk_plataforma_distribuidora primary key(cnpj)
 )
@@ -92,6 +94,7 @@ CREATE TABLE Leitor(
 	nome varchar(30),
 	login varchar(20),
 	senha varchar(50),
+	historico varchar(50),
 	idioma_buscado varchar(20),
 	
 	constraint pk_leitor primary key(cpf)	
@@ -160,6 +163,7 @@ CREATE TABLE Funcionarios(
 	cpf char(11),
 	nome varchar(50),
 	tipo varchar(20),
+	hist_trabalhos varchar(100)
 	
 	constraint pk_funcionarios primary key(cpf)
 );
