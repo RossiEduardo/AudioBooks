@@ -123,6 +123,7 @@ CREATE TABLE Acessa(
 	player_cnpj char(14),
 	player_isbn char(10),
 	leitor char(11),
+	n_livros_ouvidos integer,
 	
 	constraint pk_acessa primary key(player_cnpj, player_isbn, leitor),
     constraint fk_acessa_cnpj_isbn foreign key(player_cnpj, player_isbn) references Player(cnpj, isbn) on delete cascade,
