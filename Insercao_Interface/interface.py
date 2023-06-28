@@ -1,4 +1,4 @@
-from functions import inserir_livro, consultar_livros
+from Insercao_Interface.functions import inserir_livro, consultar_livros
 
 # Inserir um livro no banco
 ISBN = (input('Digite o ISBN do livro: '))
