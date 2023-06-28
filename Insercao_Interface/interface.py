@@ -1,7 +1,7 @@
 from functions import inserir_livro, consultar_livros
 
 # Inserir um livro no banco
-ISBN = int(input('Digite o ISBN do livro: '))
+ISBN = (input('Digite o ISBN do livro: '))
 Título = input('Digite o Título do livro: ')
 Autor = input('Digite o autor do livro: ')
 Edição = input('Digite a edição do livro: ')
