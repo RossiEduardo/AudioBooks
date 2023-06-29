@@ -5,7 +5,16 @@ CREATE TABLE Plataforma_distribuidora(
 	num_livros integer,
 	
 	constraint pk_plataforma_distribuidora primary key(cnpj)
-)
+);
+
+CREATE TABLE Funcionarios(
+	cpf char(11),
+	nome varchar(50),
+	tipo varchar(20),
+	hist_trabalhos varchar(100),
+	
+	constraint pk_funcionarios primary key(cpf)
+);
 
 CREATE TABLE Editora(
 	cnpj char(14),
@@ -86,7 +95,7 @@ CREATE TABLE Player(
 	constraint pk_player primary key(cnpj, isbn),
 	constraint fk_player_cnpj foreign key(cnpj) references Plataforma_distribuidora(cnpj),
 	constraint fk_player_isbn foreign key(isbn) references Audiobook(isbn)
-)
+);
 
 
 CREATE TABLE Leitor(
@@ -98,7 +107,7 @@ CREATE TABLE Leitor(
 	idioma_buscado varchar(20),
 	
 	constraint pk_leitor primary key(cpf)	
-)
+);
 
 
 CREATE TABLE Livros_favoritos(
@@ -107,17 +116,17 @@ CREATE TABLE Livros_favoritos(
 	
 	constraint pk_favoritos primary key(cpf, favoritos),
 	constraint fk_favoritos foreign key (cpf) references Leitor(cpf) on delete cascade
-)
+);
 
 
 CREATE TABLE Moderador(
 	cpf char(11),
 	senha varchar(50),
-	plataforma char(11) not null,
+	plataforma char(14) not null,
 	
 	constraint pf_moderador primary key(cpf),
     constraint fk_moderador foreign key(plataforma) references Plataforma_distribuidora(cnpj) on delete cascade
-)
+);
 
 CREATE TABLE Acessa(
 	player_cnpj char(14),
@@ -129,7 +138,7 @@ CREATE TABLE Acessa(
     constraint fk_acessa_cnpj_isbn foreign key(player_cnpj, player_isbn) references Player(cnpj, isbn) on delete cascade,
     constraint fk_acessa_leitor foreign key(leitor) references Leitor(cpf) on delete cascade
 	
-)
+);
 
 CREATE TABLE Estudio_de_gravacao(
 	cnpj char(14),
@@ -160,14 +169,7 @@ CREATE TABLE Sala(
 	constraint fk_sala foreign key(cnpj_empresa) references Estudio_de_gravacao(cnpj)
 );
 
-CREATE TABLE Funcionarios(
-	cpf char(11),
-	nome varchar(50),
-	tipo varchar(20),
-	hist_trabalhos varchar(100)
-	
-	constraint pk_funcionarios primary key(cpf)
-);
+
 
 CREATE TABLE Contratam(
 	codigo integer,
@@ -188,7 +190,7 @@ CREATE TABLE Dublador(
 	idioma_intermediario varchar(20),
 	
 	constraint pk_dublador primary key(cpf),
-	constraint fk_dublador foreign key(cpf) references Funcionarios(cpf)
+	constraint fk_dublador foreign key(cpf) references Funcionarios(cpf) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Dubla(
@@ -196,17 +198,18 @@ CREATE TABLE Dubla(
 	livro_adaptado char(10),
 	
 	constraint pk_dubla primary key(dublador, livro_adaptado),
-	constraint fk_dubla_dublador foreign key(dublador) references Dublador(cpf),
+	constraint fk_dubla_dublador foreign key(dublador) references Dublador(cpf) ON DELETE CASCADE ON UPDATE CASCADE,
 	constraint fk_dubla_livro_adaptado foreign key(livro_adaptado) references Livro_adaptado(isbn)
 
 );
 
 CREATE TABLE Editor(
 	cpf char(11),
-	nivel_de_experiencia integer,
+	nivel_de_experiencia char(12),
 	
 	constraint pk_editor primary key(cpf),
 	constraint fk_editor foreign key(cpf) references Funcionarios(cpf)
+		ON DELETE CASCADE ON UPDATE cascade
 );
 
 CREATE TABLE Edita(
@@ -214,8 +217,10 @@ CREATE TABLE Edita(
 	livro_adaptado char(10),
 	
 	constraint pk_edita primary key(editor, livro_adaptado),
-	constraint fk_edita_editor foreign key(editor) references Editor(cpf),
+	constraint fk_edita_editor foreign key(editor) references Editor(cpf) ON DELETE CASCADE ON UPDATE cascade,
 	constraint fk_edita_livro_adaptado foreign key(livro_adaptado) references Livro_adaptado(isbn)
+		
+
 
 );
 
@@ -225,7 +230,8 @@ CREATE TABLE Ferramentas_de_trabalho(
 	ferramenta varchar(20),
 	
 	constraint pk_ferramentas primary key(editor, ferramenta),
-	constraint fk_ferramenta foreign key(editor) references Editor(cpf)
+	constraint fk_ferramenta foreign key(editor) references Editor(cpf) ON DELETE CASCADE ON UPDATE cascade
+
 );
 
 
