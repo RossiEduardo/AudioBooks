@@ -5,11 +5,11 @@ INSERT INTO Plataforma_Distribuidora (cnpj, nome, num_usuarios, num_livros)
 VALUES ('12345678901234', 'PlataformaA', 1000, 500);
 
 INSERT INTO Plataforma_Distribuidora (cnpj, nome, num_usuarios, num_livros)
-VALUES ('98765432109876', 'PlataformaB', 1500, 800);
+VALUES ('98765432101276', 'PlataformaB', 1500, 800);
 
 -- Inserção na tabela Editora
 INSERT INTO Editora (CNPJ, Nome, Livros_Publicados, Publico_Alvo, CEP, Rua, Numero)
-VALUES ('12345678901234', 'Editora X', 100, 'Adulto', '12345678', 'Rua A', 10);
+VALUES ('12345678908734', 'Editora X', 100, 'Adulto', '12345678', 'Rua A', 10);
 
 INSERT INTO Editora (CNPJ, Nome, Livros_Publicados, Publico_Alvo, CEP, Rua, Numero)
 VALUES ('98765432109876', 'Editora Y', 50, 'Infantil', '87654321', 'Rua B', 20);
@@ -43,77 +43,77 @@ VALUES ('22222222222', 'Suspense');
 
 -- Inserção na tabela Livro
 INSERT INTO Livro (ISBN, Titulo, Autor, Edicao, Editora, Produtor)
-VALUES ('9781234567', 'Livro A', 'Autor A', 1, '12345678901234', '11111111111');
+VALUES ('9781234567', 'Livro A', 'Autor A', 1, '12345678908734', '11111111111');
 
 INSERT INTO Livro (ISBN, Titulo, Autor, Edicao, Editora, Produtor)
 VALUES ('9780987654', 'Livro B', 'Autor B', 2, '98765432109876', '11111111111');
 
 -- Inserção na tabela Livro_Adaptado
 INSERT INTO Livro_Adaptado (ISBN, ISBN_Livro, Titulo, Idioma, Autor, Tamanho_Arquivo, Genero, Duracao, Classificacao, Descricao)
-VALUES ('9781234567', '9781234567', 'Livro A', 'Português', 'Autor A', '10', 'Ficção', 120 , 10, 'Descrição A');
+VALUES ('3781234567', '9781234567', 'Livro A', 'Português', 'Autor A', '10', 'Ficção', 120 , 10, 'Descrição A');
 
 INSERT INTO Livro_Adaptado (ISBN, ISBN_Livro, Titulo, Idioma, Autor, Tamanho_Arquivo, Genero, Duracao, Classificacao, Descricao)
-VALUES ('9780987654', '9780987654', 'Livro B', 'Inglês', 'Autor B', '5', 'Suspense', 60, 12, 'Descrição B');
+VALUES ('4780987654', '9780987654', 'Livro B', 'Inglês', 'Autor B', '5', 'Suspense', 60, 12, 'Descrição B');
 
 -- Inserção na tabela Audiobook
 INSERT INTO Audiobook (ISBN, Titulo, Idioma, Autor, Duracao, Formato, Classificacao, Genero, Descricao, Livro_Adaptado)
-VALUES ('9780987654', 'Livro A', 'Inglês', 'Autor A', 120 , 'MP3', 14, 'Ficção', 'Descrição A', '9780987654');
+VALUES ('9780287654', 'Livro A', 'Inglês', 'Autor A', 120 , 'MP3', 14, 'Ficção', 'Descrição A', '9780987654');
 
 INSERT INTO Audiobook (ISBN, Titulo, Idioma, Autor, Duracao, Formato, Classificacao, Genero, Descricao, Livro_Adaptado)
-VALUES ('9781234567', 'Livro B', 'Português', 'Autor B', 120 , 'MP3', 18, 'Suspense', 'Descrição B', '9781234567');
+VALUES ('9781434567', 'Livro B', 'Português', 'Autor B', 120 , 'MP3', 18, 'Suspense', 'Descrição B', '9781234567');
 
 -- Inserção na tabela Player
 INSERT INTO Player (CNPJ, ISBN)
-VALUES ('12345678901234', '9781234567');
+VALUES ('12345678901234', '9782234567');
 
 INSERT INTO Player (CNPJ, ISBN)
-VALUES ('98765432109876', '9780987654');
+VALUES ('98765432109876', '9780887654');
 
 -- Inserção na tabela 
 INSERT INTO Leitor (CPF, Nome, Login, Senha, Historico, Idioma_Buscado)
-VALUES ('11111111111', 'João', 'joao123', 'senha456', 'Histórico A', 'Inglês');
+VALUES ('99999999999', 'João', 'joao123', 'senha456', 'Histórico A', 'Inglês');
 
 INSERT INTO Leitor (CPF, Nome, Login, Senha, Historico, Idioma_Buscado)
-VALUES ('22222222222', 'Maria', 'maria456', 'abcde789', 'Histórico B', 'Espanhol');
+VALUES ('88888888888', 'Maria', 'maria456', 'abcde789', 'Histórico B', 'Espanhol');
 
 -- Inserção na tabela LivrosFavoritos
 INSERT INTO Livros_Favoritos (CPF, Favoritos)
-VALUES ('11111111111', 'Livro X');
+VALUES ('99999999999', 'Livro X');
 
 INSERT INTO Livros_Favoritos (CPF, Favoritos)
-VALUES ('22222222222', 'Livro Y');
+VALUES ('88888888888', 'Livro Y');
 
 -- Inserção na tabela Moderador
 INSERT INTO Moderador (CPF, Senha, Plataforma)
-VALUES ('1234567890', 'senha123', '12345678901234');
+VALUES ('12345678901', 'senha123', '12345678901234');
 
 INSERT INTO Moderador (CPF, Senha, Plataforma)
-VALUES ('0987654321', 'abcde123', '98765432109876');
+VALUES ('09876543211', 'abcde123', '98765432109876');
 
 -- Inserção na tabela Acessa
 INSERT INTO Acessa (Player_CNPJ, Player_ISBN, Leitor, n_livros_ouvidos)
-VALUES ('12345678901234', '9781234567', '11111111111', 5);
+VALUES ('12345678901234', '9782234567', '999999999', 5);
 
 INSERT INTO Acessa (Player_CNPJ, Player_ISBN, Leitor, n_livros_ouvidos)
-VALUES ('98765432109876', '9780987654', '22222222222', 3);
+VALUES ('98765432109876', '9780887654', '888888888', 3);
 
 -- Inserção na tabela Estudio_de_gravação
 INSERT INTO Estudio_de_gravacao (CNPJ, Nome, Rua, CEP, Numero)
-VALUES ('12345678901234', 'Estúdio X', 'Rua A', '12345', 10);
+VALUES ('12345688901234', 'Estúdio X', 'Rua A', '12365456', 10);
 
 INSERT INTO Estudio_de_gravacao (CNPJ, Nome, Rua, CEP, Numero)
-VALUES ('98765432109876', 'Estúdio Y', 'Rua B', '54321', 20);
+VALUES ('98775432109876', 'Estúdio Y', 'Rua B', '54321756', 20);
 
 -- Inserção na tabela Serviço
 INSERT INTO Servico (Codigo, CNPJ_Estudio, ISBN)
-VALUES (1, '12345678901234', '9781234567');
+VALUES (1, '12345688901234', '9781234567');
 
 INSERT INTO Servico (Codigo, CNPJ_Estudio, ISBN)
-VALUES (2, '98765432109876', '9780987654');
+VALUES (2, '98775432109876', '9780987654');
 
 -- Inserção na tabela Sala
 INSERT INTO Sala (CNPJ_Empresa, Numero, Capacidade)
-VALUES ('12345678901234', 1, 50);
+VALUES ('1234568901234', 1, 50);
 
 INSERT INTO Sala (CNPJ_Empresa, Numero, Capacidade)
 VALUES ('98765432109876', 2, 30);

@@ -79,3 +79,16 @@ def inserir_ferramenta_trabalho(cpf_editor, ferramenta):
 
     except Exception as e:
         print("Erro ao inserir ferramenta:", e)
+
+def consultar_produtores_livros():
+    try:
+        query = """SELECT funcionarios.nome, count(*) FROM Livro INNER JOIN funcionarios ON livro.produtor = funcionarios.cpf GROUP BY funcionarios.nome HAVING count(*) > 1 """
+        cursor.execute(query)
+        results = cursor.fetchall()
+        for row in results:
+            nome_funcionario = row[0]
+            quantidade_livros = row[1]
+            print(f"Funcionário: {nome_funcionario} | Quantidade de Livros: {quantidade_livros}")
+
+    except Exception as e:
+        print("Erro ao consultar os produtores com mais de um livro produzido ")

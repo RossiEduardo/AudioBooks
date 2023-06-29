@@ -1,6 +1,7 @@
 from confi_db import cursor, conn
 import functions
 
+
 # Inserir um livro no banco
 def inserir_livros_no_banco():
     ISBN = (input('Digite o ISBN do livro: '))
@@ -55,6 +56,7 @@ def inserir_ferramenta_no_banco():
     functions.inserir_ferramenta_trabalho(cpf_editor, ferramenta)
 
 
+
 print("Seja bem vindo ao nosso sistema\nDigite o código do comando:\n")
 print("1- Inserir livro no banco")
 print("2- Inserir funcionario no banco")
@@ -62,6 +64,7 @@ print("3- Inserir produtor no banco")
 print("4- Inserir editor no banco")
 print("5- Inserir dublador no banco")
 print("6- Inserir ferramentas de trabalho do editor")
+print("7- Consultar quantos produtores possuem mais de um livro produzido")
 
 print("0-Sair")
 
@@ -81,7 +84,8 @@ while(operacao != 0):
         inserir_dublador_no_banco()
     elif operacao == 6:
         inserir_ferramenta_no_banco()
-
+    elif operacao == 7:
+        function.consultar_produtores_livros()
 
     operacao = int(input("\nDigite o código do comando:"))
     
