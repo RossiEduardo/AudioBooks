@@ -10,13 +10,3 @@ conn = psycopg2.connect(
 
 cursor = conn.cursor()
 
-cursor.execute("SELECT * FROM Player")
-result = cursor.fetchall()
-
-# Imprimir os valores
-for row in result:
-    print(row)
-
-# Fechar cursor e conexão
-cursor.close()
-conn.close()
