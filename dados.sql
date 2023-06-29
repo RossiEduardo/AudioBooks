@@ -1,4 +1,3 @@
--- Duvidas sobre alguns topicos da criacao de tabela: (experiencia ser inteiro) (historico, com0o armazenar) (tamanho n seria char?) (duracao em minutos) (como identificar plataforma)
  -- Inserção na tabela Plataforma_Distribuidora
 
 INSERT INTO Plataforma_Distribuidora (cnpj, nome, num_usuarios, num_livros)

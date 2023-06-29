@@ -24,4 +24,19 @@ from(
 	) as counter
 group by counter.Nome
 
+--crie uma busca para encontrar todos os livros escritos por Shakespare  que possuem adaptação, 
+--no qual a editora tem publico alvo adolescente com genero de romance
+SELECT la.ISBN, la.Título, la.Autor, la.Gênero, e.Nome
+from Livro_Adaptado la 
+join (
+	SELECT l.ISBN, l.Editora
+	from Livro l 
+	where l.Autor = 'Shakespeare'
+) as s on la.ISBN_Livro = s.ISBN
+join(
+	SELECT CNPJ, Nome
+	from Editora E
+  	where E.Público_Alvo = 'adolescente'
+) as e on s.Editora = e.CNPJ
+where la.Gênero = 'romance';
 

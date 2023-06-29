@@ -38,7 +38,6 @@ def inserir_editor_no_banco():
     functions.inserir_editor(cpf, nivel_exp)
 
 
-
 def inserir_dublador_no_banco():
     cpf = (input('Digite o cpf do dublador: '))
     narracao = input("Digite o estilo de narracao do dublador")
