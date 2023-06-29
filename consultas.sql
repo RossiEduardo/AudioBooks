@@ -10,3 +10,18 @@ from Livro inner join funcionarios on livro.produtor = funcionarios.cpf
 group by funcionarios.nome 
 	having count(*) > 1
 
+--Numero de funcionarios de cada estudio de gravação 
+SELECT counter.Nome, count(*)
+from(
+	SELECT e.Nome, e.CPF, count(*)
+		servico s inner join estudio_gravacao e 
+		on e.cnpj = s.cnpj_estudio 
+		join contratam c 
+		on s.codigo = c.codigo
+		join funcionarios f
+		on c.cpf_funcionario = f.CPF
+	group by e.Nome, e.CPF
+	) as counter
+group by counter.Nome
+
+
