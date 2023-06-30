@@ -1,3 +1,4 @@
+
 CREATE TABLE Plataforma_distribuidora(
 	cnpj char(14),
 	nome varchar(30),
@@ -11,7 +12,7 @@ CREATE TABLE Funcionarios(
 	cpf char(11),
 	nome varchar(50),
 	tipo varchar(20),
-	hist_trabalhos varchar(100),
+	Salario number,
 	
 	constraint pk_funcionarios primary key(cpf)
 );

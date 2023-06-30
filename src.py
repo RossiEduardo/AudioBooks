@@ -13,8 +13,6 @@ def inserir_livros_no_banco():
 
     functions.inserir_livro(ISBN, Titulo, Autor, Edicao, Editora, Produtor)
 
-# # Consultar os livros no banco
-# consultar_livros()
 
 def inserir_funcionario_no_banco():
     cpf = (input('Digite o cpf do funcionario: '))

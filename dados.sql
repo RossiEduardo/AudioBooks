@@ -36,45 +36,45 @@ VALUES ('98765432109876',
 
 -- Inserção na tabela Funcionários
 
-INSERT INTO Funcionarios (CPF, Nome, Hist_trabalhos, tipo)
+INSERT INTO Funcionarios (CPF, Nome, Salario, tipo)
 VALUES ('11111111111',
         'Funcionário A',
-        'Histórico X',
+        20000,
         'produtor');
 
 
-INSERT INTO Funcionarios (CPF, Nome, Hist_trabalhos, tipo)
+INSERT INTO Funcionarios (CPF, Nome, Salario, tipo)
 VALUES ('22222222222',
         'Funcionário B',
-        'Histórico Y',
+        15000,
         'produtor');
 
 
-INSERT INTO Funcionarios (CPF, Nome, Hist_trabalhos, tipo)
+INSERT INTO Funcionarios (CPF, Nome, Salario, tipo)
 VALUES ('33333333333',
         'Funcionário C',
-        'Histórico Y',
+        10000,
         'editor');
 
 
-INSERT INTO Funcionarios (CPF, Nome, Hist_trabalhos, tipo)
+INSERT INTO Funcionarios (CPF, Nome, Salario, tipo)
 VALUES ('44444444444',
         'Funcionário D',
-        'Histórico Y',
+        12000,
         'editor');
 
 
-INSERT INTO Funcionarios (CPF, Nome, Hist_trabalhos, tipo)
+INSERT INTO Funcionarios (CPF, Nome, Salario, tipo)
 VALUES ('55555555555',
         'Funcionário E',
-        'Histórico Y',
+        11000,
         'dublador');
 
 
-INSERT INTO Funcionarios (CPF, Nome, Hist_trabalhos, tipo)
+INSERT INTO Funcionarios (CPF, Nome, Salario, tipo)
 VALUES ('66666666666',
         'Funcionário F',
-        'Histórico Y',
+        13000,
         'dublador');
 
 -- Inserção na tabela Produtor
