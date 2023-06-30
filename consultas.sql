@@ -40,3 +40,14 @@ join(
 ) as e on s.Editora = e.CNPJ
 where la.Gênero = 'romance';
 
+-- quais os CPF's e nomes dos editores que editaram todos os livros adaptados do autor 'John Green'
+SELECT f.cpf, f.nome
+from Funcionario f join Edita e on f.cpf = e.editor
+where not EXISTS (
+	(select la.ISBN
+	from Livro_Adaptado la
+	where la.autor = 'John Green')
+	and la.ISBN NOT IN (
+		select ed.isbn from Edita ed WHERE ed.editor = e.editor
+	)
+)
