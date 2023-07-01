@@ -1,4 +1,4 @@
- -- Inserção na tabela Plataforma_Distribuidora
+-- Inserção na tabela Plataforma_Distribuidora
 
 INSERT INTO Plataforma_Distribuidora (cnpj, nome, num_usuarios, num_livros)
 VALUES ('12345678901234',

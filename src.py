@@ -17,31 +17,31 @@ def inserir_livros_no_banco():
 def inserir_funcionario_no_banco():
     cpf = (input('Digite o cpf do funcionario: '))
     nome = (input('Digite o nome do funcionario: '))
-    historico = (input('Digite o historico de trabalho do funcionario: '))
+    salario = int(input('Digite o salario do funcionario: '))
     tipo = (input('Digite o tipo do funcionario: '))
     
-    functions.inserir_funcionario(cpf, nome, historico, tipo)
+    functions.inserir_funcionario(cpf, nome, salario, tipo)
 
 def inserir_produtor_no_banco():
     cpf = (input('Digite o cpf do produtor: '))
-    genero = input("Digite o genero do produtor")
+    genero = input("Digite o genero do produtor: ")
     
     functions.inserir_produtor(cpf, genero)
 
 
 def inserir_editor_no_banco():
     cpf = (input('Digite o cpf do editor: '))
-    nivel_exp = input("Digite o nível de experiencia do editor")
+    nivel_exp = input("Digite o nível de experiencia do editor: ")
     
     functions.inserir_editor(cpf, nivel_exp)
 
 
 def inserir_dublador_no_banco():
     cpf = (input('Digite o cpf do dublador: '))
-    narracao = input("Digite o estilo de narracao do dublador")
-    idioma_nativo = input("Digite o idioma nativo do dublador")
-    idioma_fluente = input("Digite o idioma fluente do dublador")
-    idioma_intermediario = input("Digite o idioma intermediario do dublador")
+    narracao = input("Digite o estilo de narracao do dublador: ")
+    idioma_nativo = input("Digite o idioma nativo do dublador: ")
+    idioma_fluente = input("Digite o idioma fluente do dublador: ")
+    idioma_intermediario = input("Digite o idioma intermediario do dublador: ")
 
     
     functions.inserir_dublador(cpf, narracao, idioma_nativo, idioma_fluente, idioma_intermediario)
@@ -63,7 +63,7 @@ print("5- Inserir dublador no banco")
 print("6- Inserir ferramentas de trabalho do editor")
 print("7- Consultar quantos produtores possuem mais de um livro produzido")
 
-print("0-Sair")
+print("0- Sair")
 
 
 
@@ -84,7 +84,7 @@ while(operacao != 0):
     elif operacao == 7:
         function.consultar_produtores_livros()
 
-    operacao = int(input("\nDigite o código do comando:"))
+    operacao = int(input("\nDigite o código do comando: "))
     
 
 # Fechar cursor e conexão

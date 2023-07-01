@@ -14,11 +14,11 @@ def inserir_livro(isbn, titulo, autor, edicao, editora, produtor):
         print("Erro ao inserir livro:", e)
 
 
-def inserir_funcionario(cpf, nome, historico, tipo):
+def inserir_funcionario(cpf, nome, salario, tipo):
     try:
-        # Inserir livro na tabela do banco de dados
-        query = "INSERT INTO Funcionarios (cpf, nome, hist_trabalhos, tipo) VALUES (%s, %s, %s, %s)"
-        values = (cpf, nome, historico, tipo)
+        # Inserir funcionario na tabela do banco de dados
+        query = "INSERT INTO Funcionarios (cpf, nome, salario, tipo) VALUES (%s, %s, %s, %s)"
+        values = (cpf, nome, salario, tipo)
         cursor.execute(query, values)
         conn.commit()
         print("Funcionario inserido com sucesso no banco de dados.")
@@ -29,7 +29,7 @@ def inserir_funcionario(cpf, nome, historico, tipo):
 
 def inserir_produtor(cpf, genero_especialista):
     try:
-        # Inserir livro na tabela do banco de dados
+        # Inserir produtor na tabela do banco de dados
         query = "INSERT INTO Produtor (cpf, genero_especialist) VALUES (%s, %s)"
         values = (cpf, genero_especialista)
         cursor.execute(query, values)
@@ -42,7 +42,7 @@ def inserir_produtor(cpf, genero_especialista):
 
 def inserir_editor(cpf, nivel_exp):
     try:
-        # Inserir livro na tabela do banco de dados
+        # Inserir editor na tabela do banco de dados
         query = "INSERT INTO Produtor (cpf, nivel_de_experiencia) VALUES (%s, %s)"
         values = (cpf, nivel_exp)
         cursor.execute(query, values)
@@ -56,7 +56,7 @@ def inserir_editor(cpf, nivel_exp):
 
 def inserir_dublador(cpf, narracao, idioma_nativo, idioma_fluente, idioma_intermediario):
     try:
-        # Inserir livro na tabela do banco de dados
+        # Inserir dublador na tabela do banco de dados
         query = "INSERT INTO Dublador (cpf, estilo_de_narracao, idioma_nativo, idioma_fluente, idioma_intermediario) VALUES (%s, %s, %s, %s, %s)"
         values = (cpf, narracao, idioma_nativo, idioma_fluente, idioma_intermediario)
         cursor.execute(query, values)
@@ -70,7 +70,7 @@ def inserir_dublador(cpf, narracao, idioma_nativo, idioma_fluente, idioma_interm
 
 def inserir_ferramenta_trabalho(cpf_editor, ferramenta):
     try:
-        # Inserir livro na tabela do banco de dados
+        # Inserir ferramenta de trabalho na tabela do banco de dados
         query = "INSERT INTO Ferramentas_de_trabalho(editor, ferramenta) VALUES (%s, %s)"
         values = (cpf_editor, ferramenta)
         cursor.execute(query, values)
