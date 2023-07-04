@@ -61,7 +61,7 @@ print("3- Inserir produtor no banco")
 print("4- Inserir editor no banco")
 print("5- Inserir dublador no banco")
 print("6- Inserir ferramentas de trabalho do editor")
-print("7- Consultar quantos produtores possuem mais de um livro produzido")
+print("7- Consultar funcionarios")
 
 print("0- Sair")
 
@@ -82,7 +82,8 @@ while(operacao != 0):
     elif operacao == 6:
         inserir_ferramenta_no_banco()
     elif operacao == 7:
-        function.consultar_produtores_livros()
+        print("oi")
+        functions.consultar_funcionarios()
 
     operacao = int(input("\nDigite o código do comando: "))
     

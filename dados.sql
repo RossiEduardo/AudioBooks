@@ -91,7 +91,7 @@ VALUES ('22222222222',
 -- Inserção na tabela Livro
 
 INSERT INTO Livro (ISBN, Titulo, Autor, Edicao, Editora, Produtor)
-VALUES ('9781234567',
+VALUES ('1781234567',
         'Livro A',
         'Autor A',
         1,
@@ -100,7 +100,7 @@ VALUES ('9781234567',
 
 
 INSERT INTO Livro (ISBN, Titulo, Autor, Edicao, Editora, Produtor)
-VALUES ('9780987654',
+VALUES ('1780987654',
         'Livro B',
         'Autor B',
         2,
@@ -111,7 +111,7 @@ VALUES ('9780987654',
 
 INSERT INTO Livro_Adaptado (ISBN, ISBN_Livro, Titulo, Idioma, Autor, Tamanho_Arquivo, Genero, Duracao, Classificacao, Descricao)
 VALUES ('3781234567',
-        '9781234567',
+        '1781234567',
         'Livro A',
         'Português',
         'Autor A',
@@ -123,8 +123,8 @@ VALUES ('3781234567',
 
 
 INSERT INTO Livro_Adaptado (ISBN, ISBN_Livro, Titulo, Idioma, Autor, Tamanho_Arquivo, Genero, Duracao, Classificacao, Descricao)
-VALUES ('4780987654',
-        '9780987654',
+VALUES ('3780987654',
+        '1780987654',
         'Livro B',
         'Inglês',
         'Autor B',
@@ -137,7 +137,7 @@ VALUES ('4780987654',
 -- Inserção na tabela Audiobook
 
 INSERT INTO Audiobook (ISBN, Titulo, Idioma, Autor, Duracao, Formato, Classificacao, Genero, Descricao, Livro_Adaptado)
-VALUES ('9780287654',
+VALUES ('9782234567',
         'Livro A',
         'Inglês',
         'Autor A',
@@ -146,11 +146,11 @@ VALUES ('9780287654',
         14,
         'Ficção',
         'Descrição A',
-        '9780987654');
+        '3781234567');
 
 
 INSERT INTO Audiobook (ISBN, Titulo, Idioma, Autor, Duracao, Formato, Classificacao, Genero, Descricao, Livro_Adaptado)
-VALUES ('9781434567',
+VALUES ('9780887654',
         'Livro B',
         'Português',
         'Autor B',
@@ -159,18 +159,18 @@ VALUES ('9781434567',
         18,
         'Suspense',
         'Descrição B',
-        '9781234567');
+        '3780987654');
 
 -- Inserção na tabela Player
 
 INSERT INTO Player (CNPJ, ISBN)
 VALUES ('12345678901234',
-        '9782234567');
+		'9782234567');
 
 
 INSERT INTO Player (CNPJ, ISBN)
-VALUES ('98765432109876',
-        '9780887654');
+VALUES ('98765432101276',
+		'9780887654');
 
 -- Inserção na tabela
 
@@ -213,21 +213,21 @@ VALUES ('12345678901',
 INSERT INTO Moderador (CPF, Senha, Plataforma)
 VALUES ('09876543211',
         'abcde123',
-        '98765432109876');
+        '98765432101276');
 
 -- Inserção na tabela Acessa
 
 INSERT INTO Acessa (Player_CNPJ, Player_ISBN, Leitor, n_livros_ouvidos)
 VALUES ('12345678901234',
         '9782234567',
-        '999999999',
+        '99999999999',
         5);
 
 
 INSERT INTO Acessa (Player_CNPJ, Player_ISBN, Leitor, n_livros_ouvidos)
-VALUES ('98765432109876',
+VALUES ('98765432101276',
         '9780887654',
-        '888888888',
+        '88888888888',
         3);
 
 -- Inserção na tabela Estudio_de_gravação
@@ -252,24 +252,24 @@ VALUES ('98775432109876',
 INSERT INTO Servico (Codigo, CNPJ_Estudio, ISBN)
 VALUES (1,
         '12345688901234',
-        '9781234567');
+        '9782234567');
 
 
 INSERT INTO Servico (Codigo, CNPJ_Estudio, ISBN)
 VALUES (2,
         '98775432109876',
-        '9780987654');
+        '9780887654');
 
 -- Inserção na tabela Sala
 
 INSERT INTO Sala (CNPJ_Empresa, Numero, Capacidade)
-VALUES ('1234568901234',
+VALUES ('12345688901234',
         1,
         50);
 
 
 INSERT INTO Sala (CNPJ_Empresa, Numero, Capacidade)
-VALUES ('98765432109876',
+VALUES ('98775432109876',
         2,
         30);
 
@@ -305,12 +305,12 @@ VALUES ('66666666666',
 
 INSERT INTO Dubla (Dublador, Livro_Adaptado)
 VALUES ('55555555555',
-        '9781234567');
+        '3781234567');
 
 
 INSERT INTO Dubla (Dublador, Livro_Adaptado)
 VALUES ('66666666666',
-        '9780987654');
+        '3780987654');
 
 -- Inserção na tabela Editor
 
@@ -327,12 +327,12 @@ VALUES ('44444444444',
 
 INSERT INTO Edita (Editor, Livro_Adaptado)
 VALUES ('33333333333',
-        '9781234567');
+        '3781234567');
 
 
 INSERT INTO Edita (Editor, Livro_Adaptado)
 VALUES ('44444444444',
-        '9780987654');
+        '3780987654');
 
 -- Inserção na tabela Ferramentas_de_trabalho
 
@@ -353,7 +353,7 @@ VALUES ('9781233567',
         'Livro A',
         'Autor A',
         1,
-        '12345678901234',
+        '12345678908734',
         NULL);
 
 -- Inserção na tabela Livro_Adaptado
@@ -392,5 +392,5 @@ VALUES ('12345678901234',
 INSERT INTO Acessa (Player_CNPJ, Player_ISBN, Leitor, n_livros_ouvidos)
 VALUES ('12345678901234',
         '9780887554',
-        '11111111111',
+        '99999999999',
         6);
